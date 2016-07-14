@@ -1,6 +1,7 @@
-var map,markers;
+var map;
+var markers = [];
 var filteroption = "all";
-var bounds = {
+var boundary = {
   leftpos: 0,
   rightpos: 0,
   toppos: 0,
@@ -12,7 +13,10 @@ var initMap = function() {
 };
 
 var clearMarkers = function() {
-  
+  for (var i=0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
 };
 
 var generateMap = function() {
@@ -25,58 +29,72 @@ var generateMap = function() {
     var bounds = map.getBounds();
     var ne = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
-    console.log(ne.lat(),ne.lng(),sw.lat(),sw.lng());
-    var toppos = ne.lat();
-    bounds.toppos = toppos;
-    bounds.rightpos = ne.lng();
-    bounds.bottompos = sw.lat();
-    bounds.leftpos = sw.lng();
+    boundary.toppos = ne.lat();
+    boundary.rightpos = ne.lng();
+    boundary.bottompos = sw.lat();
+    boundary.leftpos = sw.lng();
     createMarkers(filteroption);
   });
 }
 
 var createMarkers = function(option) {
+  clearMarkers();
   var urlstring = "";
   if (option == "all") {
     urlstring = "/allnear?recent=true&";
   } else if (option == "allspawn") {
     urlstring = "/pokespawns?recent=false&";
   } else if (option == "nearspawn") {
-    // PASS THE CURRENT LAT LNG
     urlstring = "/pokespawns?recent=true&";
   } else if (option == "stop") {
     urlstring = "/pokestops?";
   } else if (option == "gym") {
     urlstring = "/gyms?";
   }
-  urlstring += "top=" + bounds.toppos + "&right=" + bounds.rightpos + "&bottom=" + bounds.bottompos + "&left=" + bounds.leftpos;
+  urlstring += "top=" + boundary.toppos + "&right=" + boundary.rightpos + "&bottom=" + boundary.bottompos + "&left=" + boundary.leftpos;
   $.ajax({
     type: "GET",
     url: urlstring,
     dataType: "json"
   }).done(function(res){
-    console.log(res);
+    generateMarkers(res);
+  });
+};
+
+var generateMarkers = function(data) {
+  for (var i = 0; i < data.gyms.length; i++) {
+    generateMarker(data.gyms[i],"gym");
+  }
+  for (var i = 0; i < data.stops.length; i++) {
+    generateMarker(data.stops[i],"stop");
+  }
+  for (var i = 0; i < data.spawns.length; i++) {
+    generateMarker(data.spawns[i],"spawn");
+  }
+};
+
+var generateMarker = function(data,type) {
+  if (type == "gym") {
+    var icon_url = "https://upload.wikimedia.org/wikipedia/en/e/ee/Pokemon_icon.png";
+  } else if (type == "stop") {
+    var icon_url = "http://orig03.deviantart.net/d388/f/2015/136/d/8/deluge_by_xillra-d8tngys.png";
+  } else if (type == "spawn") {
+    var icon_url = "http://orig12.deviantart.net/cee0/f/2014/279/4/b/eevee_adoptable_2__open_10_pts__by_master_user-d81v3rg.png";
+  }
+  var imageMarker = new google.maps.Marker({
+    position: {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)},
+    map: map,
+    icon: { 
+      url: icon_url,
+      size: new google.maps.Size(25, 25), 
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(0, 32),
+      scaledSize: new google.maps.Size(25, 25)
+    },
+    zIndex: 1
   });
 
-
-  /*console.log(etchings);
-  for (var i = 0; i < etchings.length; i++) {
-    var imageMarker = new google.maps.Marker({
-      position: {lat: parseFloat(etchings[i].latitude), lng: parseFloat(etchings[i].longitude)},
-      map: map,
-      icon: etchings[i].media_url
-    });
-
-    var contentString = '<h4>' + etchings[i].etching_name + '</h4>' + etchings[i].etching_description + "<div><a href='" + etchings[i].etching_url + "'>View Etching</a></div>";
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-
-    imageMarker.addListener('click', function() {
-      console.log("mew");
-      infowindow.open(map, imageMarker);
-    });
-  }*/
+  markers.push(imageMarker);
 };
 
 var resizeMap = function() {
@@ -111,6 +129,31 @@ var ready = function() {
   $("#add-gym").click(loadForm);
   $("#add-stop").click(loadForm);
   $("#add-mon").click(loadForm);
+
+  $("#show-gyms").click(function(ev){
+    ev.preventDefault();
+    createMarkers("gym");
+  });
+
+  $("#show-stops").click(function(ev){
+    ev.preventDefault();
+    createMarkers("stop");
+  });
+
+  $("#show-all").click(function(ev){
+    ev.preventDefault();
+    createMarkers("all");
+  });
+
+  $("#recent-poke").click(function(ev){
+    ev.preventDefault();
+    createMarkers("nearspawn");
+  });
+
+  $("#all-poke").click(function(ev){
+    ev.preventDefault();
+    createMarkers("allspawn");
+  });
 
 };
 

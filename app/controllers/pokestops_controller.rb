@@ -4,7 +4,19 @@ class PokestopsController < ApplicationController
   # GET /pokestops
   # GET /pokestops.json
   def index
+    latitude_start = params[:bottom].to_f
+    latitude_end = params[:top].to_f
+    longitude_start = params[:right].to_f
+    longitude_end = params[:left].to_f
+    @pokespawns = Pokespawn.none
     @pokestops = Pokestop.all
+    @gyms = Gym.none
+    #@pokespawns = Pokespawn.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end, created_at: 30.minutes.ago..Time.now)
+    #@pokestops = Pokestop.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end)
+    #@gyms = Gym.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end)
+    respond_to do |format|
+      format.json { render json: {gyms: @gyms, stops: @pokestops, spawns: @pokespawns}, status: :ok }
+    end
   end
 
   # GET /pokestops/1
