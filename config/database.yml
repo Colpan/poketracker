@@ -21,3 +21,5 @@ test:
 production:
   <<: *default
   database: poke_production
+  username: poketracker
+  password: eL$eFNm8E]6aq_j$
