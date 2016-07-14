@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pokestops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pokestops.each do |pokestop| %>
+      <tr>
+        <td><%= pokestop.name %></td>
+        <td><%= pokestop.latitude %></td>
+        <td><%= pokestop.longitude %></td>
+        <td><%= pokestop.user %></td>
+        <td><%= link_to 'Show', pokestop %></td>
+        <td><%= link_to 'Edit', edit_pokestop_path(pokestop) %></td>
+        <td><%= link_to 'Destroy', pokestop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pokestop', new_pokestop_path %>

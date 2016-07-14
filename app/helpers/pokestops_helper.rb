@@ -1,0 +1,2 @@
+module PokestopsHelper
+end

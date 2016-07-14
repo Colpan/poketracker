@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pokespawn.name %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @pokespawn.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @pokespawn.longitude %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pokespawn.user %>
+</p>
+
+<%= link_to 'Edit', edit_pokespawn_path(@pokespawn) %> |
+<%= link_to 'Back', pokespawns_path %>

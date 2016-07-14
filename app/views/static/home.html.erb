@@ -1,0 +1,27 @@
+<% if current_user %>
+  <div class="control-area">
+    <div class="control-options">
+      <%= button_to "Add Gym", nil, id: "add-gym" %>
+      <%= button_to "Add Pokestop", nil, id: "add-stop" %>
+      <%= button_to "Add Pokemon", nil, id: "add-mon" %>
+    </div>
+    <div class="control-container">
+    </div>
+  </div>
+<% else %>
+  <div class="control-area">
+    <h2>Login to Add a Gym, Stop, or Spawn</h2>
+    <%= button_to "Login", new_user_session_url, method: :get %>
+    <%= button_to "Sign Up", new_user_registration_url, method: :get %>
+  </div>
+<% end %>
+<div class="poke-map">
+  <div class="map-controls">
+    <%= button_to "Show Recent Pokemon Spawns", nil, id: "recent-poke" %>
+    <%= button_to "View All Pokemon Spawns", nil, id: "all-poke" %>
+    <%= button_to "Show Gyms", nil, id: "show-gyms" %>
+    <%= button_to "Show Stops", nil, id: "show-stops" %>
+  </div>
+  <div id="poke-map"></div>
+</div>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDEg0f141Z9ej8j7ILF9q61ArxJO-a1E34&callback=initMap", async: "async", defer: "defer" %>
