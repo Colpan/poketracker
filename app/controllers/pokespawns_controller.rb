@@ -46,7 +46,7 @@ class PokespawnsController < ApplicationController
 
     respond_to do |format|
       if @pokespawn.save
-        format.html { redirect_to @pokespawn, notice: 'Pokespawn was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Pokespawn was successfully created.' }
         format.json { render :show, status: :created, location: @pokespawn }
       else
         format.html { render :new }

@@ -1,0 +1,16 @@
+<div class="header">
+  <%= button_to "Filters", nil, id: "filter-toggle" %>
+  <% if current_user %>
+    <%= button_to "Add New", nil, id: "open-add" %>
+    <%= button_to "Menu", nil, id: "menu-open" %>
+  <% else %>
+    <%= button_to "Login", new_user_session_url, method: :get %>
+    <%= button_to "Sign Up", new_user_registration_url, method: :get %>
+  <% end %>
+</div>
+<div class="menu">
+  <ul>
+    <li><%= link_to "About", nil, method: :get %></li>
+    <li><%= link_to "Logout", destroy_user_session_url, method: :delete %></li>
+  </ul>
+</div>

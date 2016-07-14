@@ -108,7 +108,7 @@ var generateMarker = function(data,type) {
 };
 
 var resizeMap = function() {
-  $("#poke-map").css("height", ($(window).height() - 90) + "px");
+  $("#poke-map").css("height", ($(window).height() - 45) + "px");
 }
 
 var addPlaceMarker = function(type) {
@@ -194,6 +194,27 @@ var ready = function() {
   $("#all-poke").click(function(ev){
     ev.preventDefault();
     createMarkers("allspawn");
+  });
+
+  $("#filter-toggle").click(function(ev){
+    ev.preventDefault();
+    $(".control-area").removeClass("active");
+    $(".menu").removeClass("active");
+    $(".map-controls").toggleClass("active");
+  });
+
+  $("#open-add").click(function(ev){
+    ev.preventDefault();
+    $(".map-controls").removeClass("active");
+    $(".menu").removeClass("active");
+    $(".control-area").toggleClass("active");
+  });
+
+  $("#menu-open").click(function(ev){
+    ev.preventDefault();
+    $(".control-area").removeClass("active");
+    $(".map-controls").removeClass("active");
+    $(".menu").toggleClass("active");
   });
 
 };

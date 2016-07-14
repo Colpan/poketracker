@@ -3,16 +3,9 @@
     <div class="control-options">
       <%= button_to "Add Gym", nil, id: "add-gym" %>
       <%= button_to "Add Pokestop", nil, id: "add-stop" %>
-      <%= button_to "Add Pokemon", nil, id: "add-mon" %>
+      <%= button_to "Add Spawn", nil, id: "add-mon" %>
     </div>
-    <div class="control-container">
-    </div>
-  </div>
-<% else %>
-  <div class="control-area">
-    <h2>Login to Add a Gym, Stop, or Spawn</h2>
-    <%= button_to "Login", new_user_session_url, method: :get %>
-    <%= button_to "Sign Up", new_user_registration_url, method: :get %>
+    <div class="control-container"></div>
   </div>
 <% end %>
 <div class="poke-map">

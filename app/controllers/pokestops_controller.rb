@@ -43,7 +43,7 @@ class PokestopsController < ApplicationController
 
     respond_to do |format|
       if @pokestop.save
-        format.html { redirect_to @pokestop, notice: 'Pokestop was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Pokestop was successfully created.' }
         format.json { render :show, status: :created, location: @pokestop }
       else
         format.html { render :new }

@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+  padding: 10px 5%;
+}
+
+.control-area,
+.map-controls,
+.menu {
+  display: none;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 5% 15px;
+  background-color: #fff;
+}
+
+.control-area.active,
+.menu.active {
+  display: block;
+}
+
+.control-options,
+.map-controls.active {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-controls {
+  flex-wrap: wrap;
+}
+
+.map-controls input[type=submit] {
+  margin-bottom: 10px;
+}
+
+.control-container {
+  padding: 10px 0;
+}
