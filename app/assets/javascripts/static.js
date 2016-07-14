@@ -1,4 +1,5 @@
 var map;
+var placeMarker = null;
 var markers = [];
 var filteroption = "all";
 var boundary = {
@@ -23,6 +24,15 @@ var generateMap = function() {
   map = new google.maps.Map(document.getElementById('poke-map'), {
     center: {lat: 32.8242404, lng: -117.375352},
     zoom: 7
+  });
+
+  google.maps.event.addListener(map, 'click', function(e){
+    if (placeMarker != null) {
+      var latLng = e.latLng;
+      $("#placemarker-lat").val(latLng.lat());
+      $("#placemarker-lng").val(latLng.lng());
+      placeMarker.setPosition({lat: latLng.lat(), lng: latLng.lng()});
+    }
   });
 
   google.maps.event.addListener(map, 'idle', function(ev){
@@ -101,6 +111,38 @@ var resizeMap = function() {
   $("#poke-map").css("height", ($(window).height() - 90) + "px");
 }
 
+var addPlaceMarker = function(type) {
+  if (placeMarker != null) {
+    placeMarker.setMap(null);
+  }
+  if (type == "gym") {
+    var icon_url = "https://upload.wikimedia.org/wikipedia/en/e/ee/Pokemon_icon.png";
+  } else if (type == "stop") {
+    var icon_url = "http://orig03.deviantart.net/d388/f/2015/136/d/8/deluge_by_xillra-d8tngys.png";
+  } else if (type == "mon") {
+    var icon_url = "http://orig12.deviantart.net/cee0/f/2014/279/4/b/eevee_adoptable_2__open_10_pts__by_master_user-d81v3rg.png";
+  }
+  placeMarker = new google.maps.Marker({
+    position: {lat: 32.8242404, lng: -117.375352},
+    map: map,
+    icon: { 
+      url: icon_url,
+      size: new google.maps.Size(25, 25), 
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(13, 25),
+      scaledSize: new google.maps.Size(25, 25)
+    },
+    draggable: true,
+    animation: google.maps.Animation.DROP
+  });
+
+  google.maps.event.addListener(placeMarker, 'dragend', function(e){
+    var latLng = e.latLng;
+    $("#placemarker-lat").val(latLng.lat());
+    $("#placemarker-lng").val(latLng.lng());
+  });
+};
+
 var loadForm = function(ev) {
   ev.preventDefault();
   var type = $(this).attr("id").split("-").slice(-1)[0];
@@ -111,15 +153,14 @@ var loadForm = function(ev) {
   } else if (type == "mon") {
     var urlstring = "/pokespawns/new";
   }
-  console.log(urlstring);
   $.ajax({
     type: "GET",
     url: urlstring,
     dataType: "json"
   }).done(function(res){
-    console.log(res);
     $(".control-container").html(res.attachmentPartial);
   });
+  addPlaceMarker(type);
 }
 
 var ready = function() {

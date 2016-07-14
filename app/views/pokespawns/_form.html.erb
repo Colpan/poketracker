@@ -1,32 +1,10 @@
 <%= form_for(@pokespawn) do |f| %>
-  <% if @pokespawn.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pokespawn.errors.count, "error") %> prohibited this pokespawn from being saved:</h2>
-
-      <ul>
-      <% @pokespawn.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
+  <%= f.hidden_field :latitude, id: "placemarker-lat" %>
+  <%= f.hidden_field :longitude, id: "placemarker-lng" %>
   <div class="actions">
     <%= f.submit %>
   </div>
