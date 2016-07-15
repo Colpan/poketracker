@@ -30,7 +30,9 @@ input[type=email] {
   margin-bottom: 10px;
 }
 
-input:focus {
+input:focus,
+textarea:focus,
+button:focus {
   outline: none;
 }
 
@@ -43,12 +45,19 @@ input[type=submit] {
   border: 1px solid #000;
 }
 
+textarea {
+  width: 100%;
+  min-height: 300px;
+  margin-bottom: 10px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 45px;
   padding: 10px 5%;
+  background: #dfd4bb;
 }
 
 .header input[type=submit] {
@@ -70,7 +79,7 @@ input[type=submit] {
   z-index: 10;
   width: 100%;
   padding: 10px 5% 15px;
-  background-color: #fff;
+  background: #dfd4bb;
 }
 
 .control-area.active,
@@ -82,6 +91,11 @@ input[type=submit] {
 .map-controls.active {
   display: flex;
   justify-content: space-between;
+}
+
+.menu li {
+  margin: 0 0 10px;
+  list-style: none;
 }
 
 .map-controls {
@@ -98,4 +112,9 @@ input[type=submit] {
 
 .body {
   padding: 20px 5%;
+}
+
+.body p {
+  font-size: 15px;
+  line-height: 1.6;
 }

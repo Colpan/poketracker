@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contact_forms
   get "allnear", to: "static#allnear"
   get "about", to: "static#about", as: :about
   get "donate", to: "static#donate", as: :donate
