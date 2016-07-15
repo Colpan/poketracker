@@ -1,5 +1,5 @@
 <% if current_user %>
-  <div class="control-area">
+  <div class="control-area <%= winning_team %>">
     <div class="control-options">
       <%= button_to "Add Gym", nil, id: "add-gym" %>
       <%= button_to "Add Pokestop", nil, id: "add-stop" %>
@@ -9,7 +9,7 @@
   </div>
 <% end %>
 <div class="poke-map">
-  <div class="map-controls">
+  <div class="map-controls <%= winning_team %>">
     <%= button_to "Show All", nil, id: "show-all" %>
     <%= button_to "Show Recent Pokemon Spawns", nil, id: "recent-poke" %>
     <%= button_to "View All Pokemon Spawns", nil, id: "all-poke" %>

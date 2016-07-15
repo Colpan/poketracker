@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-p {
+p, label {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -241,5 +241,6 @@ iframe {
 
 .poke-icons, .poke-filter-icons {
   max-height: 125px;
+  margin-bottom: 15px;
   overflow: scroll;
 }
