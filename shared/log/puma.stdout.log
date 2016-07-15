@@ -1968,3 +1968,234 @@ Completed 200 OK in 91ms (Views: 67.7ms | ActiveRecord: 5.9ms)
 [83712] === puma shutdown: 2016-07-14 18:22:38 -0700 ===
 [83712] - Goodbye!
 Exiting
+=== puma startup: 2016-07-14 18:25:29 -0700 ===
+[83942] * Starting control server on unix:///var/folders/jn/zp4q166x5251sr2zf364q0yr0000gn/T/puma-status-1468545929689-83942
+[83942] - Worker 1 (pid: 83946) booted, phase: 0
+[83942] - Worker 0 (pid: 83945) booted, phase: 0
+
+
+Started GET "/" for ::1 at 2016-07-14 18:25:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered static/home.html.erb within layouts/application (409.7ms)
+  Rendered layouts/_menu.html.erb (11.5ms)
+Completed 200 OK in 1448ms (Views: 1328.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-14 18:25:32 -0700
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered static/home.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_menu.html.erb (5.1ms)
+Completed 200 OK in 79ms (Views: 77.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/pokemons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/pokespawns.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/pokestops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/application.self-737973c3c4a9644549dbfd0cb7811f60353e25a54cd19a237695cb4a8349d1e2.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/scaffolds.self-6c3ff1eee458ee916c342301626e3b726419758d6bd04f86adb918349801ebd5.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/contact_forms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/gyms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/contact_forms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/assets/gyms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/pokemons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/pokespawns.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/pokestops.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/static.self-50f4efd683b5f6eb8d75356faa8bcd196d58f005d6d0ecd72756be6f328123a8.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-14 18:25:32 -0700
+
+
+Started GET "/allnear?recent=true&top=35.37116345241753&right=-115.01329145312502&bottom=30.202143811407467&left=-119.73741254687502" for ::1 at 2016-07-14 18:25:33 -0700
+Processing by StaticController#allnear as JSON
+  Parameters: {"recent"=>"true", "top"=>"35.37116345241753", "right"=>"-115.01329145312502", "bottom"=>"30.202143811407467", "left"=>"-119.73741254687502"}
+  [1m[35mGym Load (1.2ms)[0m  SELECT "gyms".* FROM "gyms"
+  [1m[36mPokestop Load (0.9ms)[0m  [1mSELECT "pokestops".* FROM "pokestops"[0m
+  [1m[35mPokespawn Load (0.7ms)[0m  SELECT "pokespawns".* FROM "pokespawns"
+Completed 200 OK in 216ms (Views: 151.4ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/" for ::1 at 2016-07-14 18:25:46 -0700
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered static/home.html.erb within layouts/application (43.0ms)
+  Rendered layouts/_menu.html.erb (4.5ms)
+Completed 200 OK in 415ms (Views: 409.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/contact_forms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/gyms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/scaffolds.self-6c3ff1eee458ee916c342301626e3b726419758d6bd04f86adb918349801ebd5.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/pokestops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/pokespawns.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/pokemons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/gyms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/application.self-d3841146934721b7e434513c91c85cda1bd60fdf20a222de3b2f9baeb6dbf5fb.css?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/pokestops.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/contact_forms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/pokemons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/pokespawns.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/static.self-50f4efd683b5f6eb8d75356faa8bcd196d58f005d6d0ecd72756be6f328123a8.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-14 18:25:47 -0700
+
+
+Started GET "/allnear?recent=true&top=35.37116345241753&right=-115.01329145312502&bottom=30.202143811407467&left=-119.73741254687502" for ::1 at 2016-07-14 18:25:48 -0700
+Processing by StaticController#allnear as JSON
+  Parameters: {"recent"=>"true", "top"=>"35.37116345241753", "right"=>"-115.01329145312502", "bottom"=>"30.202143811407467", "left"=>"-119.73741254687502"}
+  [1m[35mGym Load (1.5ms)[0m  SELECT "gyms".* FROM "gyms"
+  [1m[36mPokestop Load (1.3ms)[0m  [1mSELECT "pokestops".* FROM "pokestops"[0m
+  [1m[35mPokespawn Load (1.2ms)[0m  SELECT "pokespawns".* FROM "pokespawns"
+Completed 200 OK in 271ms (Views: 174.1ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2016-07-14 18:25:54 -0700
+Processing by StaticController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered static/home.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_menu.html.erb (3.1ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/contact_forms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+Started GET "/assets/gyms.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+Started GET "/assets/scaffolds.self-6c3ff1eee458ee916c342301626e3b726419758d6bd04f86adb918349801ebd5.css?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+Started GET "/assets/pokespawns.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+Started GET "/assets/pokemons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+Started GET "/assets/gyms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+Started GET "/assets/pokestops.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:54 -0700
+
+
+
+
+Started GET "/assets/pokespawns.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+Started GET "/assets/static.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/application.self-ffaf79105ab05148c4e977216211b428c71ff6d0ac0eddaaa43462c437acaf1d.css?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/contact_forms.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/pokemons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/pokestops.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/static.self-50f4efd683b5f6eb8d75356faa8bcd196d58f005d6d0ecd72756be6f328123a8.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-07-14 18:25:55 -0700
+
+
+Started GET "/allnear?recent=true&top=35.37116345241753&right=-115.01329145312502&bottom=30.202143811407467&left=-119.73741254687502" for ::1 at 2016-07-14 18:25:56 -0700
+Processing by StaticController#allnear as JSON
+  Parameters: {"recent"=>"true", "top"=>"35.37116345241753", "right"=>"-115.01329145312502", "bottom"=>"30.202143811407467", "left"=>"-119.73741254687502"}
+  [1m[35mGym Load (1.6ms)[0m  SELECT "gyms".* FROM "gyms"
+  [1m[36mPokestop Load (0.6ms)[0m  [1mSELECT "pokestops".* FROM "pokestops"[0m
+  [1m[35mPokespawn Load (0.4ms)[0m  SELECT "pokespawns".* FROM "pokespawns"
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 2.6ms)
+[83942] - Gracefully shutting down workers...
+[83942] === puma shutdown: 2016-07-14 18:25:59 -0700 ===
+[83942] - Goodbye!
+Exiting

@@ -55,13 +55,13 @@ textarea {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 45px;
+  height: 70px;
   padding: 10px 5%;
   background: #dfd4bb;
 }
 
 .header input[type=submit] {
-  height: 25px;
+  height: 45px;
   border: none;
 }
 
