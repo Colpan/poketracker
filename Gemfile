@@ -37,6 +37,10 @@ gem 'omniauth-twitter', '~> 1.2.1'
 gem 'omniauth-facebook', '~> 3.0.0'
 gem 'twitter', '~> 5.16.0'
 gem 'fb_graph', '~> 2.7.17'
+gem 'omniauth-instagram'
+gem 'instagram'
+gem 'omniauth-google-oauth2'
+gem 'google-api-client'
 
 gem 'geocoder', '~> 1.3.7'
 
