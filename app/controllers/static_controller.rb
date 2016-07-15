@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
 
   def home
+    @pokemon = Pokemon.all
   end
 
   def about

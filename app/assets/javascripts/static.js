@@ -2,6 +2,7 @@ var map;
 var placeMarker = null;
 var markers = [];
 var filteroption = "all";
+var pokemon = [];
 var boundary = {
   leftpos: 0,
   rightpos: 0,
@@ -176,8 +177,37 @@ var loadForm = function(ev) {
     dataType: "json"
   }).done(function(res){
     $(".control-container").html(res.attachmentPartial);
+
+    if (type == "mon") {
+      bindIcons();
+    }
   });
   addPlaceMarker(type);
+}
+
+function bindIcons() {
+  if (!pokemon.length) {
+    var pokemonelem = $(".pokemon-icons");
+    for (var i = 0; i < pokemonelem.length; i++) {
+      pokemon.push(pokemonelem.eq(i).attr('id').split('-')[0]);
+    }
+  }
+  $(".pokemon-icons").click(function() {
+    var pokeid = $(this).attr('id');
+    pokeid = pokeid.split('-')[1];
+    $('#poke-id').val(pokeid);
+    placeMarker.setIcon($(this).attr('src'));
+  });
+
+  $("#pokespawn_name").on('input', function() {
+    var str = $(this).val().toLowerCase();
+    for (var i = 0; i < pokemon.length; i++) {
+      if (pokemon[i].toLowerCase().indexOf(str) == -1)
+          $('#' + pokemon[i] + "-" + (i+1)).hide();
+      else 
+        $('#' + pokemon[i] + "-" + (i+1)).show();
+    }
+  });
 }
 
 var ready = function() {

@@ -86,6 +86,6 @@ class PokespawnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokespawn_params
-      params.require(:pokespawn).permit(:name, :latitude, :longitude, :user_id)
+      params.require(:pokespawn).permit(:name, :latitude, :longitude, :user_id, :pokemon_id)
     end
 end

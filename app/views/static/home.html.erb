@@ -15,9 +15,9 @@
     <%= button_to "View All Pokemon Spawns", nil, id: "all-poke" %>
     <%= button_to "Show Gyms", nil, id: "show-gyms" %>
     <%= button_to "Show Stops", nil, id: "show-stops" %>
+    <%= render partial: "pokemon_list" %>
   </div>
   <div id="poke-map"></div>
 </div>
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDEg0f141Z9ej8j7ILF9q61ArxJO-a1E34&callback=initMap", async: "async", defer: "defer" %>
-<%= javascript_include_tag "pokemon_filter.js", async: "async", defer: "defer" %>
