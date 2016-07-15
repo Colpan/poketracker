@@ -40,7 +40,7 @@ gem 'fb_graph', '~> 2.7.17'
 
 gem 'geocoder', '~> 1.3.7'
 
-gem 'unicorn'
+#gem 'unicorn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,3 +55,5 @@ group :development do
   gem 'spring'
 end
 
+#gem 'unicorn'
+gem 'puma'
