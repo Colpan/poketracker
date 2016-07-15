@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "about", to: "static#about", as: :about
   get "donate", to: "static#donate", as: :donate
   get "rankings", to: "static#rankings", as: :rankings
+  get "privacy", to: "static#privacy", as: :privacy
   resources :pokemons
   resources :pokespawns, only: [:index, :new, :create]
   resources :pokestops, only: [:index, :new, :create]

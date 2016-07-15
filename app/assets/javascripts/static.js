@@ -183,7 +183,7 @@ var loadForm = function(ev) {
     }
     setTimeout(function(){
       resizeControlMap();
-    },1000);
+    },500);
   });
   addPlaceMarker(type);
 }

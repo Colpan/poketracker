@@ -10,6 +10,9 @@ class StaticController < ApplicationController
   def donate
   end
 
+  def privacy
+  end
+
   def rankings
     instinct = User.where(team: 'instinct').count
     valor = User.where(team: 'valor').count
