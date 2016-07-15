@@ -181,7 +181,9 @@ var loadForm = function(ev) {
     if (type == "mon") {
       bindIcons();
     }
-    resizeControlMap();
+    setTimeout(function(){
+      resizeControlMap();
+    },1000);
   });
   addPlaceMarker(type);
 }
@@ -190,7 +192,8 @@ var resizeControlMap = function(){
   var height = $(".control-area")[0].offsetHeight;
   var window_height = window.innerHeight;
   $("#poke-map").css("top",height + "px");
-  $("#poke-map").css("height",(window_height - height) + "px");
+  $("#poke-map").css("height",(window_height - height - 50) + "px");
+  google.maps.event.trigger(map, "resize");
   map.setCenter({lat: currentPos.latitude, lng: currentPos.longitude});
 };
 
