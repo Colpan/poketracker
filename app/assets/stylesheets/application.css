@@ -18,6 +18,10 @@
   box-sizing: border-box;
 }
 
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
 body {
   margin: 0;
 }
@@ -41,6 +45,7 @@ input[type=submit] {
   appearance: none;
   width: 100%;
   height: 35px;
+  font-family: 'Oswaldo', sans-serif;
   background: none;
   border: 1px solid #000;
 }
@@ -55,13 +60,14 @@ textarea {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 70px;
+  height: 100px;
   padding: 10px 5%;
   background: #dfd4bb;
 }
 
 .header input[type=submit] {
-  height: 45px;
+  height: 80px;
+  font-size: 20px;
   border: none;
 }
 
@@ -74,7 +80,7 @@ textarea {
 .menu {
   display: none;
   position: fixed;
-  top: 45px;
+  top: 100px;
   left: 0;
   z-index: 10;
   width: 100%;
@@ -95,6 +101,8 @@ textarea {
 
 .menu li {
   margin: 0 0 10px;
+  font-family: 'Oswaldo', sans-serif;
+  font-size: 16px;
   list-style: none;
 }
 
