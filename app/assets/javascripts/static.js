@@ -25,7 +25,7 @@ var getGeolocation = function() {
 };
 
 var initMap = function() {
-  generateMap();
+  getGeolocation();
 };
 
 var clearMarkers = function() {
