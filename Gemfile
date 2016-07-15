@@ -56,4 +56,6 @@ group :development do
 end
 
 #gem 'unicorn'
-gem 'puma'
+group :production do
+  gem 'puma'
+end
