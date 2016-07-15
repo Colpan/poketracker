@@ -30,6 +30,8 @@ class PokespawnsController < ApplicationController
   # GET /pokespawns/new
   def new
     @pokespawn = Pokespawn.new
+    @pokemon = Pokemon.all
+
     respond_to do |format|
       format.json { render json: {attachmentPartial: render_to_string('/pokespawns/_form.html.erb', layout: false, locals: {pokespawn: @pokespawn})}, status: :ok }
     end
