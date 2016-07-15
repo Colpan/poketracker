@@ -2199,3 +2199,21 @@ Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 2.6ms)
 [83942] === puma shutdown: 2016-07-14 18:25:59 -0700 ===
 [83942] - Goodbye!
 Exiting
+=== puma startup: 2016-07-14 21:27:44 -0400 ===
+[19210] * Starting control server on unix:///tmp/puma-status-1468546064329-19210
+[19210] - Worker 0 (pid: 19258) booted, phase: 0
+[19210] - Worker 1 (pid: 19262) booted, phase: 0
+[19210] - Gracefully shutting down workers...
+[19210] === puma shutdown: 2016-07-14 21:28:51 -0400 ===
+[19210] - Goodbye!
+=== puma startup: 2016-07-14 21:28:52 -0400 ===
+[19348] * Starting control server on unix:///tmp/puma-status-1468546132123-19348
+[19348] - Worker 1 (pid: 19400) booted, phase: 0
+[19348] - Worker 0 (pid: 19396) booted, phase: 0
+[19348] - Gracefully shutting down workers...
+[19348] === puma shutdown: 2016-07-14 21:30:39 -0400 ===
+[19348] - Goodbye!
+=== puma startup: 2016-07-14 21:30:40 -0400 ===
+[19526] * Starting control server on unix:///tmp/puma-status-1468546240065-19526
+[19526] - Worker 0 (pid: 19574) booted, phase: 0
+[19526] - Worker 1 (pid: 19578) booted, phase: 0
