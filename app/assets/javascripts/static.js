@@ -125,7 +125,7 @@ var generateMarker = function(data,type) {
 };
 
 var resizeMap = function() {
-  $("#poke-map").css("height", ($(window).height() - 45) + "px");
+  $("#poke-map").css("height", ($(window).height() - 50) + "px");
 }
 
 var addPlaceMarker = function(type) {

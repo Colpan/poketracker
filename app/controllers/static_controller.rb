@@ -9,6 +9,9 @@ class StaticController < ApplicationController
   def donate
   end
 
+  def poll
+  end
+
   def allnear
     latitude_start = params[:bottom].to_f
     latitude_end = params[:top].to_f
