@@ -22,6 +22,12 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
+a,
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
 }
@@ -49,6 +55,15 @@ input[type=submit] {
   font-family: 'Oswaldo', sans-serif;
   background: none;
   border: 1px solid #000;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+select {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -92,6 +107,27 @@ textarea {
   background: #dedbd1;
 }
 
+.header.mystic,
+.control-area.mystic,
+.map-controls.mystic,
+.menu.mystic {
+  background: #031fe6;
+}
+
+.header.instinct,
+.control-area.instinct,
+.map-controls.instinct,
+.menu.instinct {
+  background: #fbff01;
+}
+
+.header.valor,
+.control-area.valor,
+.map-controls.valor,
+.menu.valor {
+  background: #ff0101;
+}
+
 .control-area.active,
 .menu.active {
   display: block;
@@ -104,9 +140,10 @@ textarea {
 }
 
 .menu li {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
   font-family: 'Oswaldo', sans-serif;
   font-size: 16px;
+  text-align: right;
   list-style: none;
 }
 
@@ -137,4 +174,67 @@ textarea {
 
 iframe {
   width: 100%!important;
+}
+
+/* Rankings */
+
+.rank-row {
+  display: flex;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.rank-row > div {
+  width: 50%;
+  max-width: 200px;
+}
+
+.rank-row:first-of-type > div {
+  font-size: 20px;
+}
+
+.login-links {
+  margin-top: 20px;
+}
+
+.btn_social {
+  padding: 6px 12px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn_social.Facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: rgba(0,0,0,0.2);
+}
+
+.btn_social.Instagram {
+  color: #fff;
+  background-color: #3f729b;
+  border-color: rgba(0,0,0,0.2);
 }

@@ -10,7 +10,17 @@ class StaticController < ApplicationController
   def donate
   end
 
-  def poll
+  def rankings
+    instinct = User.where(team: 'instinct').count
+    valor = User.where(team: 'valor').count
+    mystic = User.where(team: 'mystic').count
+    @ranks = [
+      {:name => 'instinct', :count => instinct},
+      {:name => 'valor', :count => valor},
+      {:name => 'mystic', :count => mystic}
+    ]
+
+    @ranks.sort! { |a,b| b[:count] <=> a[:count] }
   end
 
   def allnear

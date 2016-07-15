@@ -19,5 +19,7 @@
   </div>
   <div id="poke-map"></div>
 </div>
-
+<script>
+  var gym_image = '<%= image_url "Gym_Symbol.png" %>';
+</script>
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDEg0f141Z9ej8j7ILF9q61ArxJO-a1E34&callback=initMap", async: "async", defer: "defer" %>

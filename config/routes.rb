@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   get "allnear", to: "static#allnear"
   get "about", to: "static#about", as: :about
   get "donate", to: "static#donate", as: :donate
-  get "poll", to: "static#poll", as: :poll
+  get "rankings", to: "static#rankings", as: :rankings
   resources :pokemons
-  resources :pokespawns
-  resources :pokestops
-  resources :gyms
+  resources :pokespawns, only: [:index, :new, :create]
+  resources :pokestops, only: [:index, :new, :create]
+  resources :gyms, only: [:index, :new, :create]
   devise_for :users, class_name: 'FormUser', :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

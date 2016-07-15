@@ -10,6 +10,11 @@
     </div>
 
     <div class="field">
+      <%= f.label :team %>
+      <%= f.select :team, options_for_select([['None',''],['Valor','valor'],['Mystic','mystic'],['Instinct','instinct']]) %>
+    </div>
+
+    <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
