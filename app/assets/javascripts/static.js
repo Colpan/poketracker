@@ -190,26 +190,31 @@ var ready = function() {
 
   $("#show-gyms").click(function(ev){
     ev.preventDefault();
+    filteroption = "gym";
     createMarkers("gym");
   });
 
   $("#show-stops").click(function(ev){
     ev.preventDefault();
+    filteroption = "stop";
     createMarkers("stop");
   });
 
   $("#show-all").click(function(ev){
     ev.preventDefault();
+    filteroption = "all";
     createMarkers("all");
   });
 
   $("#recent-poke").click(function(ev){
     ev.preventDefault();
+    filteroption = "nearspawn";
     createMarkers("nearspawn");
   });
 
   $("#all-poke").click(function(ev){
     ev.preventDefault();
+    filteroption = "allspawn";
     createMarkers("allspawn");
   });
 

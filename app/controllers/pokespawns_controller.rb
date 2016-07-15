@@ -8,15 +8,12 @@ class PokespawnsController < ApplicationController
     latitude_end = params[:top].to_f
     longitude_start = params[:right].to_f
     longitude_end = params[:left].to_f
-    @pokespawns = Pokespawn.all
+    @pokespawns = Pokespawn.where(latitude: latitude_start..latitude_end, longitude: longitude_end..longitude_start)
+    @pokestops = Pokestop.none
+    @gyms = Gym.none
     if params[:recent] == "true"
       @pokespawns = @pokespawns.where(created_at: 30.minutes.ago..Time.now)
     end
-    @pokestops = Pokestop.none
-    @gyms = Gym.none
-    #@pokespawns = Pokespawn.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end, created_at: 30.minutes.ago..Time.now)
-    #@pokestops = Pokestop.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end)
-    #@gyms = Gym.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end)
     respond_to do |format|
       format.json { render json: {gyms: @gyms, stops: @pokestops, spawns: @pokespawns}, status: :ok }
     end

@@ -14,12 +14,9 @@ class StaticController < ApplicationController
     latitude_end = params[:top].to_f
     longitude_start = params[:right].to_f
     longitude_end = params[:left].to_f
-    @pokespawns = Pokespawn.all
-    @pokestops = Pokestop.all
-    @gyms = Gym.all
-    #@pokespawns = Pokespawn.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end, created_at: 30.minutes.ago..Time.now)
-    #@pokestops = Pokestop.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end)
-    #@gyms = Gym.where(latitude: latitude_end..latitude_start, longitude: longitude_start..longitude_end)
+    @pokespawns = Pokespawn.where(latitude: latitude_start..latitude_end, longitude: longitude_end..longitude_start, created_at: 30.minutes.ago..Time.now)
+    @pokestops = Pokestop.where(latitude: latitude_start..latitude_end, longitude: longitude_end..longitude_start)
+    @gyms = Gym.where(latitude: latitude_start..latitude_end, longitude: longitude_end..longitude_start)
     respond_to do |format|
       format.json { render json: {gyms: @gyms, stops: @pokestops, spawns: @pokespawns}, status: :ok }
     end
