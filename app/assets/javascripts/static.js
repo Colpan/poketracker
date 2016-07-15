@@ -7,10 +7,25 @@ var boundary = {
   rightpos: 0,
   toppos: 0,
   bottompos: 0
-}
+};
+var currentPos = {
+  latitude: 0,
+  longitude: 0
+};
+
+var getGeolocation = function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(generateMap);
+  } else {
+    generateMap({coords: {
+      latitude: 32.8242404,
+      longitude: -117.375352
+    }});
+  }
+};
 
 var initMap = function() {
-  generateMap();
+  getGeolocation();
 };
 
 var clearMarkers = function() {
@@ -20,10 +35,12 @@ var clearMarkers = function() {
   markers = [];
 };
 
-var generateMap = function() {
+var generateMap = function(position) {
+  currentPos.latitude = position.coords.latitude;
+  currentPos.longitude = position.coords.longitude;
   map = new google.maps.Map(document.getElementById('poke-map'), {
-    center: {lat: 32.8242404, lng: -117.375352},
-    zoom: 7
+    center: {lat: position.coords.latitude, lng: position.coords.longitude},
+    zoom: 15
   });
 
   google.maps.event.addListener(map, 'click', function(e){
@@ -108,7 +125,7 @@ var generateMarker = function(data,type) {
 };
 
 var resizeMap = function() {
-  $("#poke-map").css("height", ($(window).height() - 45) + "px");
+  $("#poke-map").css("height", ($(window).height() - 50) + "px");
 }
 
 var addPlaceMarker = function(type) {
@@ -123,7 +140,7 @@ var addPlaceMarker = function(type) {
     var icon_url = "http://orig12.deviantart.net/cee0/f/2014/279/4/b/eevee_adoptable_2__open_10_pts__by_master_user-d81v3rg.png";
   }
   placeMarker = new google.maps.Marker({
-    position: {lat: 32.8242404, lng: -117.375352},
+    position: {lat: currentPos.latitude, lng: currentPos.longitude},
     map: map,
     icon: { 
       url: icon_url,
@@ -173,26 +190,31 @@ var ready = function() {
 
   $("#show-gyms").click(function(ev){
     ev.preventDefault();
+    filteroption = "gym";
     createMarkers("gym");
   });
 
   $("#show-stops").click(function(ev){
     ev.preventDefault();
+    filteroption = "stop";
     createMarkers("stop");
   });
 
   $("#show-all").click(function(ev){
     ev.preventDefault();
+    filteroption = "all";
     createMarkers("all");
   });
 
   $("#recent-poke").click(function(ev){
     ev.preventDefault();
+    filteroption = "nearspawn";
     createMarkers("nearspawn");
   });
 
   $("#all-poke").click(function(ev){
     ev.preventDefault();
+    filteroption = "allspawn";
     createMarkers("allspawn");
   });
 
