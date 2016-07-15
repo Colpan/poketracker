@@ -102,7 +102,7 @@ var generateMarkers = function(data) {
 
 var generateMarker = function(data,type) {
   if (type == "gym") {
-    var icon_url = "https://upload.wikimedia.org/wikipedia/en/e/ee/Pokemon_icon.png";
+    var icon_url = gym_image;
   } else if (type == "stop") {
     var icon_url = "http://orig03.deviantart.net/d388/f/2015/136/d/8/deluge_by_xillra-d8tngys.png";
   } else if (type == "spawn") {
@@ -115,7 +115,7 @@ var generateMarker = function(data,type) {
       url: icon_url,
       size: new google.maps.Size(25, 25), 
       origin: new google.maps.Point(0, 0),
-      anchor: new google.maps.Point(0, 32),
+      anchor: new google.maps.Point(13, 25),
       scaledSize: new google.maps.Size(25, 25)
     },
     zIndex: 1
@@ -133,7 +133,7 @@ var addPlaceMarker = function(type) {
     placeMarker.setMap(null);
   }
   if (type == "gym") {
-    var icon_url = "https://upload.wikimedia.org/wikipedia/en/e/ee/Pokemon_icon.png";
+    var icon_url = gym_image;
   } else if (type == "stop") {
     var icon_url = "http://orig03.deviantart.net/d388/f/2015/136/d/8/deluge_by_xillra-d8tngys.png";
   } else if (type == "mon") {

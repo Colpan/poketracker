@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "allnear", to: "static#allnear"
   get "about", to: "static#about", as: :about
   get "donate", to: "static#donate", as: :donate
-  get "poll", to: "static#poll", as: :poll
+  get "rankings", to: "static#rankings", as: :rankings
   resources :pokemons
   resources :pokespawns
   resources :pokestops

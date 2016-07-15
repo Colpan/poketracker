@@ -1,0 +1,15 @@
+<div class="body">
+  <h1>Team Ranks</h1>
+  <p>Invite your friends to play! Make sure to select your team in your account settings. The header bar's styling will change to make the currently winning team. Show off your colors!</p>
+  <div class="team-rankings">
+    <div class="rank-row">
+      <div>Team Name</div>
+      <div>Member Count</div>
+    </div>
+    <% @ranks.each do |rank| %>
+      <div class="rank-row">
+        <div><%= rank[:name] %></div>
+        <div><%= rank[:count] %> members</div>
+      </div>
+    <% end %>
+</div>
