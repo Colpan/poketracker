@@ -238,3 +238,8 @@ iframe {
   background-color: #3f729b;
   border-color: rgba(0,0,0,0.2);
 }
+
+.poke-icons, .poke-filter-icons {
+  max-height: 125px;
+  overflow: scroll;
+}

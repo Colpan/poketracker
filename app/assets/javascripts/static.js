@@ -140,6 +140,7 @@ var addPlaceMarker = function(type) {
   } else if (type == "mon") {
     var icon_url = "http://orig12.deviantart.net/cee0/f/2014/279/4/b/eevee_adoptable_2__open_10_pts__by_master_user-d81v3rg.png";
   }
+  console.log(currentPos);
   placeMarker = new google.maps.Marker({
     position: {lat: currentPos.latitude, lng: currentPos.longitude},
     map: map,
@@ -177,13 +178,21 @@ var loadForm = function(ev) {
     dataType: "json"
   }).done(function(res){
     $(".control-container").html(res.attachmentPartial);
-
     if (type == "mon") {
       bindIcons();
     }
+    resizeControlMap();
   });
   addPlaceMarker(type);
 }
+
+var resizeControlMap = function(){
+  var height = $(".control-area")[0].offsetHeight;
+  var window_height = window.innerHeight;
+  $("#poke-map").css("top",height + "px");
+  $("#poke-map").css("height",(window_height - height) + "px");
+  map.setCenter({lat: currentPos.latitude, lng: currentPos.longitude});
+};
 
 function bindIcons() {
   if (!pokemon.length) {
@@ -253,6 +262,10 @@ var ready = function() {
     $(".control-area").removeClass("active");
     $(".menu").removeClass("active");
     $(".map-controls").toggleClass("active");
+    if (!$(".control-area").hasClass("active")) {
+      resizeMap();
+      $("#poke-map").css("top","0px");
+    }
   });
 
   $("#open-add").click(function(ev){
@@ -260,6 +273,10 @@ var ready = function() {
     $(".map-controls").removeClass("active");
     $(".menu").removeClass("active");
     $(".control-area").toggleClass("active");
+    if (!$(".control-area").hasClass("active")) {
+      resizeMap();
+      $("#poke-map").css("top","0px");
+    }
   });
 
   $("#menu-open").click(function(ev){
@@ -267,6 +284,10 @@ var ready = function() {
     $(".control-area").removeClass("active");
     $(".map-controls").removeClass("active");
     $(".menu").toggleClass("active");
+    if (!$(".control-area").hasClass("active")) {
+      resizeMap();
+      $("#poke-map").css("top","0px");
+    }
   });
 
 };
