@@ -40,7 +40,7 @@ var generateMap = function(position) {
   currentPos.longitude = position.coords.longitude;
   map = new google.maps.Map(document.getElementById('poke-map'), {
     center: {lat: position.coords.latitude, lng: position.coords.longitude},
-    zoom: 7
+    zoom: 15
   });
 
   google.maps.event.addListener(map, 'click', function(e){
