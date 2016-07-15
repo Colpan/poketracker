@@ -3,6 +3,12 @@ class StaticController < ApplicationController
   def home
   end
 
+  def about
+  end
+
+  def donate
+  end
+
   def allnear
     latitude_start = params[:bottom].to_f
     latitude_end = params[:top].to_f

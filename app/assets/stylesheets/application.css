@@ -22,12 +22,42 @@ body {
   margin: 0;
 }
 
+input[type=text],
+input[type=password],
+input[type=email] {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type=submit] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 35px;
+  background: none;
+  border: 1px solid #000;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 45px;
   padding: 10px 5%;
+}
+
+.header input[type=submit] {
+  height: 25px;
+  border: none;
+}
+
+.hide {
+  display: none!important;
 }
 
 .control-area,
@@ -64,4 +94,8 @@ body {
 
 .control-container {
   padding: 10px 0;
+}
+
+.body {
+  padding: 20px 5%;
 }
