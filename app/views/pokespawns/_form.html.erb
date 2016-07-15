@@ -1,11 +1,13 @@
 <%= form_for(@pokespawn) do |f| %>
   <p>Please select the pokemon that you saw spawn. Next, drag the pin below or press on the map to indicate where the spawn was. We appreciate your input!</p>
   <div class="field">
+    <%= render partial: "pokemon_list" %>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <%= f.hidden_field :latitude, id: "placemarker-lat" %>
   <%= f.hidden_field :longitude, id: "placemarker-lng" %>
+  <%= f.hidden_field :pokemon_id, id: "poke-id" %>
   <div class="actions">
     <%= f.submit %>
   </div>

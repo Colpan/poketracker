@@ -10,6 +10,12 @@
 /shared/pids/*
 /shared/log/*
 /shared/socket/*
+*.pid
+*.log
+*.state
+/shared/pids/puma.pid
+/shared/pids/puma.state
+/shared/log/puma.stderr.log
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

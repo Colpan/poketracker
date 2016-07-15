@@ -41,3 +41,41 @@
 === puma startup: 2016-07-14 18:50:41 -0700 ===
 >>>>>>> 9cbc87a65613ea819b1a53bf0965c325e90dc1eb
 === puma startup: 2016-07-14 22:14:37 -0400 ===
+=== puma startup: 2016-07-14 20:03:37 -0700 ===
+=== puma startup: 2016-07-14 20:04:01 -0700 ===
+/Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/server.rb:355:in `delete': No such file or directory @ unlink_internal - /Users/jordanbutler/poketracker/poketracker/tmp/pids/server.pid (Errno::ENOENT)
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/server.rb:355:in `block in write_pid'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/puma/cluster.rb:120:in `fork'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/puma/cluster.rb:120:in `block in spawn_workers'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/puma/cluster.rb:116:in `times'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/puma/cluster.rb:116:in `spawn_workers'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/puma/cluster.rb:178:in `check_workers'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/puma/cluster.rb:442:in `run'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/puma/launcher.rb:172:in `run'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/puma-3.4.0/lib/rack/handler/puma.rb:51:in `run'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.2/lib/rails/commands/server.rb:80:in `start'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:75:in `tap'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:75:in `server'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.2/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/railties-4.2.5.2/lib/rails/commands.rb:17:in `<top (required)>'
+	from /Users/jordanbutler/poketracker/poketracker/bin/rails:9:in `require'
+	from /Users/jordanbutler/poketracker/poketracker/bin/rails:9:in `<top (required)>'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/spring-1.7.2/lib/spring/client/rails.rb:28:in `load'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/spring-1.7.2/lib/spring/client/rails.rb:28:in `call'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/spring-1.7.2/lib/spring/client/command.rb:7:in `call'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/spring-1.7.2/lib/spring/client.rb:30:in `run'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/spring-1.7.2/bin/spring:49:in `<top (required)>'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/spring-1.7.2/lib/spring/binstub.rb:11:in `load'
+	from /Users/jordanbutler/.rvm/gems/ruby-2.2.1/gems/spring-1.7.2/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /Users/jordanbutler/poketracker/poketracker/bin/spring:13:in `require'
+	from /Users/jordanbutler/poketracker/poketracker/bin/spring:13:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+=== puma startup: 2016-07-14 20:40:12 -0700 ===
+=== puma startup: 2016-07-15 09:12:47 -0700 ===
+=== puma startup: 2016-07-15 09:12:47 -0700 ===
+=== puma startup: 2016-07-15 09:12:47 -0700 ===
+=== puma startup: 2016-07-15 09:12:47 -0700 ===
+=== puma startup: 2016-07-15 09:12:47 -0700 ===

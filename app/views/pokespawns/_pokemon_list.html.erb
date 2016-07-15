@@ -1,0 +1,5 @@
+<div class="poke-icons">
+	<% @pokemon.each do |pokemon| %>
+		<%= image_tag pokemon.icon, id: pokemon.name + '-' + pokemon.id.to_s, class: "pokemon-icons" %>
+	<% end %>
+</div>
