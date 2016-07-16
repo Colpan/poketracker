@@ -140,7 +140,6 @@ var addPlaceMarker = function(type) {
   } else if (type == "mon") {
     var icon_url = "http://orig12.deviantart.net/cee0/f/2014/279/4/b/eevee_adoptable_2__open_10_pts__by_master_user-d81v3rg.png";
   }
-  console.log(currentPos);
   placeMarker = new google.maps.Marker({
     position: {lat: currentPos.latitude, lng: currentPos.longitude},
     map: map,
