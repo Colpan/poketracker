@@ -90,6 +90,12 @@ var createMarkers = function(option) {
 };
 
 var generateMarkers = function(data) {
+  if (!pokemon.length) {
+    for (var i = 0; i < data.pokemon.length; i++) {
+      pokemon.push({ 'name': data.pokemon[i].name, 'icon': data.pokemon[i].icon });
+    }
+  }
+
   for (var i = 0; i < data.gyms.length; i++) {
     generateMarker(data.gyms[i],"gym");
   }
@@ -107,7 +113,7 @@ var generateMarker = function(data,type) {
   } else if (type == "stop") {
     var icon_url = "http://orig03.deviantart.net/d388/f/2015/136/d/8/deluge_by_xillra-d8tngys.png";
   } else if (type == "spawn") {
-    var icon_url = "http://orig12.deviantart.net/cee0/f/2014/279/4/b/eevee_adoptable_2__open_10_pts__by_master_user-d81v3rg.png";
+    var icon_url = $('#' + pokemon[data.pokemon_id].name + "-" + (data.pokemon_id+1));
   }
   var imageMarker = new google.maps.Marker({
     position: {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)},
@@ -197,12 +203,6 @@ var resizeControlMap = function(){
 };
 
 function bindIcons() {
-  if (!pokemon.length) {
-    var pokemonelem = $(".pokemon-icons");
-    for (var i = 0; i < pokemonelem.length; i++) {
-      pokemon.push(pokemonelem.eq(i).attr('id').split('-')[0]);
-    }
-  }
   $(".pokemon-icons").click(function() {
     var pokeid = $(this).attr('id');
     pokeid = pokeid.split('-')[1];
@@ -213,10 +213,10 @@ function bindIcons() {
   $("#pokespawn_name").on('input', function() {
     var str = $(this).val().toLowerCase();
     for (var i = 0; i < pokemon.length; i++) {
-      if (pokemon[i].toLowerCase().indexOf(str) == -1)
-          $('#' + pokemon[i] + "-" + (i+1)).hide();
+      if (pokemon[i].name.toLowerCase().indexOf(str) == -1)
+          $('#' + pokemon[i].name + "-" + (i+1)).hide();
       else 
-        $('#' + pokemon[i] + "-" + (i+1)).show();
+        $('#' + pokemon[i].name + "-" + (i+1)).show();
     }
   });
 }
