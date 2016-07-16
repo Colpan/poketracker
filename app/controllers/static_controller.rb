@@ -29,15 +29,11 @@ class StaticController < ApplicationController
     longitude_start = params[:right].to_f
     longitude_end = params[:left].to_f
     @pokemon = Pokemon.all
-    @pokemon_icons = []
-    @pokemon.each do |pokeman|
-      @pokemon_icons.push(image_tag(pokemon.icon))
-    end
     @pokespawns = Pokespawn.where(latitude: latitude_start..latitude_end, longitude: longitude_end..longitude_start, created_at: 30.minutes.ago..Time.now)
     @pokestops = Pokestop.where(latitude: latitude_start..latitude_end, longitude: longitude_end..longitude_start)
     @gyms = Gym.where(latitude: latitude_start..latitude_end, longitude: longitude_end..longitude_start)
     respond_to do |format|
-      format.json { render json: {gyms: @gyms, stops: @pokestops, spawns: @pokespawns, pokemon: @pokemon, icons: @pokemon_icons}, status: :ok }
+      format.json { render json: {gyms: @gyms, stops: @pokestops, spawns: @pokespawns, pokemon: @pokemon}, status: :ok }
     end
   end
 end

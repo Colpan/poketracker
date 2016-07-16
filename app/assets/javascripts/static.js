@@ -92,7 +92,7 @@ var createMarkers = function(option) {
 var generateMarkers = function(data) {
   if (!pokemon.length) {
     for (var i = 0; i < data.pokemon.length; i++) {
-      pokemon.push({ 'name': data.pokemon[i].name, 'icon': data.pokemon[i].icon });
+      pokemon.push(data.pokemon[i].name);
     }
   }
 
@@ -113,7 +113,7 @@ var generateMarker = function(data,type) {
   } else if (type == "stop") {
     var icon_url = "http://orig03.deviantart.net/d388/f/2015/136/d/8/deluge_by_xillra-d8tngys.png";
   } else if (type == "spawn") {
-    var icon_url = $('#' + pokemon[data.pokemon_id].name + "-" + (data.pokemon_id+1));
+    var icon_url = data.pokeicon;
   }
   var imageMarker = new google.maps.Marker({
     position: {lat: parseFloat(data.latitude), lng: parseFloat(data.longitude)},
@@ -146,6 +146,7 @@ var addPlaceMarker = function(type) {
   } else if (type == "mon") {
     var icon_url = "http://orig12.deviantart.net/cee0/f/2014/279/4/b/eevee_adoptable_2__open_10_pts__by_master_user-d81v3rg.png";
   }
+
   placeMarker = new google.maps.Marker({
     position: {lat: currentPos.latitude, lng: currentPos.longitude},
     map: map,
@@ -186,9 +187,7 @@ var loadForm = function(ev) {
     if (type == "mon") {
       bindIcons();
     }
-    setTimeout(function(){
-      resizeControlMap();
-    },500);
+    resizeControlMap();
   });
   addPlaceMarker(type);
 }
@@ -197,8 +196,7 @@ var resizeControlMap = function(){
   var height = $(".control-area")[0].offsetHeight;
   var window_height = window.innerHeight;
   $("#poke-map").css("top",height + "px");
-  $("#poke-map").css("height",(window_height - height - 50) + "px");
-  google.maps.event.trigger(map, "resize");
+  $("#poke-map").css("height",(window_height - height) + "px");
   map.setCenter({lat: currentPos.latitude, lng: currentPos.longitude});
 };
 
@@ -207,16 +205,17 @@ function bindIcons() {
     var pokeid = $(this).attr('id');
     pokeid = pokeid.split('-')[1];
     $('#poke-id').val(pokeid);
+    $('#poke-icon').val($(this).attr('src'));
     placeMarker.setIcon($(this).attr('src'));
   });
 
   $("#pokespawn_name").on('input', function() {
     var str = $(this).val().toLowerCase();
     for (var i = 0; i < pokemon.length; i++) {
-      if (pokemon[i].name.toLowerCase().indexOf(str) == -1)
-          $('#' + pokemon[i].name + "-" + (i+1)).hide();
+      if (pokemon[i].toLowerCase().indexOf(str) == -1)
+          $('#' + pokemon[i] + "-" + (i+1)).hide();
       else 
-        $('#' + pokemon[i].name + "-" + (i+1)).show();
+        $('#' + pokemon[i] + "-" + (i+1)).show();
     }
   });
 }

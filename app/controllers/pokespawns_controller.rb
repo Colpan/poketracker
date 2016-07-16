@@ -30,7 +30,7 @@ class PokespawnsController < ApplicationController
     @pokemon = Pokemon.all
 
     respond_to do |format|
-      format.json { render json: {attachmentPartial: render_to_string('/pokespawns/_form.html.erb', layout: false, locals: {pokespawn: @pokespawn, pokemon: @pokemon})}, status: :ok }
+      format.json { render json: {attachmentPartial: render_to_string('/pokespawns/_form.html.erb', layout: false, locals: {pokespawn: @pokespawn})}, status: :ok }
     end
   end
 
@@ -86,6 +86,6 @@ class PokespawnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokespawn_params
-      params.require(:pokespawn).permit(:name, :latitude, :longitude, :user_id, :pokemon_id)
+      params.require(:pokespawn).permit(:name, :latitude, :longitude, :user_id, :pokemon_id, :pokeicon)
     end
 end
